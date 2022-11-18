@@ -44,10 +44,12 @@ public class PeliculaControl {
 
             }
 
-            retorno = "La Pelicula  " + pelicula1.getNombre() + " a sido creado correctamente";
-
+            retorno = "Pelicula: " + pelicula1.getNombre() + "\nDirector: " + pelicula1.getDirector() + "\n"
+                    + "Porcentaje de Aceptacion: " + pelicula1.getPorcentajeAceptacion() + "\n"
+                    + "Recaudacion de: " + pelicula1.getRecaudacion() + " miles de millones de dolares \n"
+                    + "Pelicula de: " + pelicula1.getYearEstreno();
+            return retorno;
         }
-        
     
 
     public String eliminar(String[] data) {
@@ -55,7 +57,7 @@ public class PeliculaControl {
         var nombrePelicula = data[0];
         var s = false;
         for (var peliculas : this.peliculaServiceImpl.listar()) {
-            if (peliculas.getNombre()== nombrePelicula) {
+            if (peliculas.getNombre() == nombrePelicula) {
                 s = true;
             }
         }
@@ -93,6 +95,3 @@ public class PeliculaControl {
 
     }
 }
-
-
-
